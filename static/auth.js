@@ -1,0 +1,6 @@
+const authApi=async(url,opt={})=>{const r=await fetch(url,{headers:{'Content-Type':'application/json'},...opt});let d={};try{d=await r.json()}catch{}if(!r.ok)throw new Error(d.error||'Erro na operação');return d};
+const authMsg=(el,text,ok=true)=>{el.textContent=text;el.className='msg '+(ok?'ok':'err')};
+document.querySelectorAll('.auth-tab').forEach(button=>button.onclick=()=>{document.querySelectorAll('.auth-tab').forEach(item=>item.classList.remove('active'));document.querySelectorAll('.auth-form').forEach(form=>form.classList.remove('active'));button.classList.add('active');document.querySelector('#'+button.dataset.auth+'Form').classList.add('active')});
+async function submitAuth(formId,url,msgId){const form=document.querySelector(formId);form.onsubmit=async event=>{event.preventDefault();try{await authApi(url,{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(event.target)))});window.location.href='/dashboard.html'}catch(error){authMsg(document.querySelector(msgId),error.message,false)}}}
+submitAuth('#loginForm','/api/login','#loginMsg');
+submitAuth('#registerForm','/api/register','#registerMsg');

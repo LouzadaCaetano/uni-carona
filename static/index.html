@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UniCarona</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="topbar"><div class="brand"><span class="logo">U</span><div><strong>UniCarona</strong><small>Carona solidária universitária</small></div></div><div id="userArea"></div></header>
+<header class="topbar"><div class="brand"><span class="logo">U</span><div><strong>UniCarona</strong><small>Carona solidária universitária</small></div></div></header>
 <main>
 <section id="authView" class="auth-wrap">
   <div class="welcome"><span class="eyebrow">Mobilidade colaborativa</span><h1>Um jeito simples de ir e voltar da faculdade.</h1><p>Solicite caronas ou torne-se motorista usando a mesma conta.</p><div class="feature-row"><span>Cadastro único</span><span>Motoristas verificados</span><span>Solicitação rápida</span></div></div>
@@ -11,24 +11,5 @@
     <form id="registerForm" class="auth-form"><label>Nome completo<input name="name" required placeholder="Seu nome"></label><label>E-mail<input name="email" type="email" required placeholder="voce@email.com"></label><label>Senha<input name="password" type="password" minlength="6" required placeholder="Mínimo 6 caracteres"></label><button class="primary">Criar minha conta</button><div id="registerMsg" class="msg"></div></form>
   </div>
 </section>
-<section id="appView" hidden>
-  <section class="dashboard-head"><div><span class="eyebrow">Painel UniCarona</span><h1 id="hello">Olá</h1><p id="accountSummary" class="muted"></p></div><div class="status-card"><span>Seu perfil</span><strong id="profileStatus">Passageiro</strong></div></section>
-  <nav id="navTabs" class="tabs"></nav>
-  <section id="passengerPanel" class="panel">
-    <div class="grid two">
-      <article class="card"><h2>Solicitar uma carona</h2><p class="muted">Sua conta já identifica você como passageiro.</p><form id="rideForm"><div class="field-group"><label>Origem<input name="origin_label" required placeholder="Minha localização ou endereço"></label><button id="gpsBtn" type="button" class="secondary small">Usar GPS</button></div><div class="coords"><label>Latitude<input id="originLat" name="origin_lat" type="number" step="any" placeholder="Opcional"></label><label>Longitude<input id="originLng" name="origin_lng" type="number" step="any" placeholder="Opcional"></label></div><label>Destino<input id="destination" name="destination_label" list="places" required placeholder="Escolha ou digite o destino"></label><datalist id="places"><option value="Unileste - Coronel Fabriciano"><option value="Centro - Ipatinga"><option value="Centro - Timóteo"><option value="Shopping Vale do Aço - Ipatinga"></datalist><div class="coords"><label>Latitude destino<input id="destLat" name="destination_lat" type="number" step="any" placeholder="Opcional"></label><label>Longitude destino<input id="destLng" name="destination_lng" type="number" step="any" placeholder="Opcional"></label></div><button class="primary">Solicitar carona</button></form><div id="rideMsg" class="msg"></div></article>
-      <article class="card"><div class="section-head"><div><h2>Minhas solicitações</h2><p class="muted">Acompanhe se algum motorista já aceitou.</p></div><button id="refreshMyRides" class="secondary">Atualizar</button></div><div id="myRides" class="list"></div></article>
-    </div>
-  </section>
-  <section id="driverPanel" class="panel" hidden>
-    <div id="driverApplyBox" class="card narrow"><h2>Quero ser motorista</h2><p class="muted">Envie os dados para análise manual do administrador.</p><form id="driverApplyForm"><div class="grid two compact"><label>Veículo<input name="vehicle_model" required placeholder="Ex.: Fiat Argo 2022"></label><label>Placa<input name="plate" required placeholder="ABC1D23"></label><label class="span2">CNH<input name="cnh" required inputmode="numeric" placeholder="Somente números"></label></div><button class="primary">Enviar solicitação</button></form><div id="driverMsg" class="msg"></div></div>
-    <div id="driverStatusBox" class="card narrow" hidden><h2>Status de motorista</h2><div id="driverStatusInfo"></div></div>
-    <div id="driverRidesBox" class="card" hidden><div class="section-head"><div><h2>Corridas disponíveis</h2><p class="muted">Você só vê esta área após aprovação do cadastro de motorista.</p></div><button id="refreshDriverRides" class="secondary">Atualizar</button></div><div id="driverRides" class="list"></div></div>
-  </section>
-  <section id="adminPanel" class="panel" hidden>
-    <div class="admin-grid"><article class="card"><div class="section-head"><div><h2>Solicitações de motorista</h2><p class="muted">Aprovação manual antes de liberar corridas.</p></div><button class="secondary" onclick="loadAdmin()">Atualizar</button></div><div id="adminDrivers" class="list"></div></article><article class="card"><h2>Usuários cadastrados</h2><div id="adminUsers" class="list compact-list"></div></article></div>
-    <article class="card"><h2>Solicitações de carona</h2><p class="muted">Visão geral das solicitações criadas e seus status.</p><div id="adminRides" class="list"></div></article>
-  </section>
-</section>
 </main>
-<footer>UniCarona • Protótipo acadêmico para navegador</footer><script src="app.js"></script></body></html>
+<footer>UniCarona • Protótipo acadêmico para navegador</footer><script src="auth.js"></script></body></html>
