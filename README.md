@@ -1,4 +1,7 @@
-# UniCarona — protótipo funcional
+# uni-carona
+Repositório da prova de Produção, Métricas e Qualidade de software.
+
+## UniCarona — protótipo funcional
 
 Sistema web acadêmico de carona solidária para universitários.
 
